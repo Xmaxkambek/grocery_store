@@ -1,6 +1,5 @@
 // Define a function that finds the total of all products from a list of products
 
-
 /// Returns the total of all products from a list of products
 // args:
 //  products: A list of products
@@ -126,7 +125,9 @@ int getAmountDairy(List products) {
   int amount = 0;
   for (var item in products) {
     if (item['type'] == 'dairy') {
-      amount++;
+      if (item['name'] == 'Milk') {
+        amount++;
+      }
     }
   }
   return amount;
@@ -143,7 +144,9 @@ double getTotalPricesDairy(List products) {
   double total = 0.0;
   for (var item in products) {
     if (item['type'] == 'dairy') {
-      total += item['price'];
+      if (item['name'] == 'Milk') {
+        total += item['price'];
+      }
     }
   }
   return total;
@@ -192,17 +195,16 @@ double getTotalPricesMeat(List products) {
 
 String getMostExpensive(List products) {
   String mostExpensive = '';
-  List a1, a2;
-  a1 = [];
-  a2 = [];
+
+  List a1 = [];
+  List a2 = [];
   int l = products.length;
 
   for (var item in products) {
     a1.add(item['price']);
     a2.add(item['price']);
   }
-  a1.sort();
-
+  
   mostExpensive = products[a2.indexOf(a1.last)]['name'];
   return mostExpensive;
 }
@@ -225,7 +227,6 @@ String getCheapest(List products) {
     a1.add(item['price']);
     a2.add(item['price']);
   }
-  a1.sort();
 
   cheapest = products[a2.indexOf(a1[0])]['name'];
   return cheapest;
@@ -248,7 +249,6 @@ String getMostExpensiveFruit(List products) {
       a1.add(item['price']);
       a2.add(item['price']);
     }
-    a1.sort();
     mostExpensive = products[a2.indexOf(a1.last)]['name'];
   }
   return mostExpensive;
@@ -271,7 +271,6 @@ String getCheapestFruit(List products) {
       a1.add(item['price']);
       a2.add(item['price']);
     }
-    a1.sort();
     cheapest = products[a2.indexOf(a1[0])]['name'];
     return cheapest;
   }
@@ -294,7 +293,6 @@ String getMostExpensiveVegetable(List products) {
       a1.add(item['price']);
       a2.add(item['price']);
     }
-    a1.sort();
     mostExpensive = products[a2.indexOf(a1.last)]['name'];
   }
   return mostExpensive;
@@ -337,21 +335,23 @@ String getMostExpensiveDairy(List products) {
   a2 = [];
   for (var item in products) {
     if (item['type'] == 'dairy') {
-      a1.add(item['price']);
+      if(item['name']=='Mlik'){
+         a1.add(item['price']);
       a2.add(item['price']);
+      }
+     
     }
-    a1.sort();
     mostExpensive = products[a2.indexOf(a1.last)]['name'];
   }
   return mostExpensive;
 }
 
 // Define a function that finds the cheapest dairy product from a list of products
-  /// Returns the cheapest dairy product from a list of products
-  // args:
-  //  products: A list of products
-  //  returns:
-  // The cheapest dairy product
+/// Returns the cheapest dairy product from a list of products
+// args:
+//  products: A list of products
+//  returns:
+// The cheapest dairy product
 
 String getCheapestDairy(List products) {
   String cheapest = '';
@@ -363,45 +363,44 @@ String getCheapestDairy(List products) {
       a1.add(item['price']);
       a2.add(item['price']);
     }
-    a1.sort();
-    cheapest = products[a2.indexOf(a1.last)]['name'];
+    cheapest = products[a2.indexOf(a1[0])]['name'];
   }
   return cheapest;
-} 
+}
 
 // Define a function that finds the most expensive meat product from a list of products
-  /// Returns the most expensive meat product from a list of products
-  // args:
-  //  products: A list of products
-  //  returns:
-  // The most expensive meat product
+/// Returns the most expensive meat product from a list of products
+// args:
+//  products: A list of products
+//  returns:
+// The most expensive meat product
 
 String getMostExpensiveMeat(List products) {
   String mostExpensive = '';
- List a1, a2;
+  List a1, a2;
   a1 = [];
   a2 = [];
   for (var item in products) {
     if (item['type'] == 'meat') {
+      
       a1.add(item['price']);
       a2.add(item['price']);
     }
-    a1.sort();
     mostExpensive = products[a2.indexOf(a1.last)]['name'];
   }
   return mostExpensive;
 }
 
 // Define a function that finds the cheapest meat product from a list of products
-  /// Returns the cheapest meat product from a list of products
-  // args:
-  //  products: A list of products
-  //  returns:
-  // The cheapest meat product
+/// Returns the cheapest meat product from a list of products
+// args:
+//  products: A list of products
+//  returns:
+// The cheapest meat product
 
 String getCheapestMeat(List products) {
   String cheapest = '';
- List a1, a2;
+  List a1, a2;
   a1 = [];
   a2 = [];
   for (var item in products) {
@@ -410,7 +409,7 @@ String getCheapestMeat(List products) {
       a2.add(item['price']);
     }
     a1.sort();
-    cheapest = products[a2.indexOf(a1.last)]['name'];
+    cheapest = products[a2.indexOf(a1[0])]['name'];
   }
   return cheapest;
 }
