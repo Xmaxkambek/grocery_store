@@ -315,7 +315,6 @@ String getCheapestVegetable(List products) {
       a1.add(item['price']);
       a2.add(item['price']);
     }
-    a1.sort();
     cheapest = products[a2.indexOf(a1[0])]['name'];
   }
   return cheapest;
@@ -408,7 +407,6 @@ String getCheapestMeat(List products) {
       a1.add(item['price']);
       a2.add(item['price']);
     }
-    a1.sort();
     cheapest = products[a2.indexOf(a1[0])]['name'];
   }
   return cheapest;
