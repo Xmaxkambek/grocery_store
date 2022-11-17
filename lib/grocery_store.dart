@@ -317,7 +317,7 @@ String getMostExpensiveDairy(List products) {
   double i = 0;
   for (var ex in products) {
     if (ex["type"] == 'dairy') {
-      if(ex['price']>i)
+      if(ex['price'] > i)
       i = ex["price"];
       mostExpensive = ex["name"];
     }
