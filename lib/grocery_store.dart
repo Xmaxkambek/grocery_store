@@ -233,10 +233,10 @@ String getCheapest(List products) {
 
 String getMostExpensiveFruit(List products) {
   String mostExpensive = '';
-  double i = 12;
+  double i = 0;
   for (var ex in products) {
     if (ex["type"] == 'fruit') {
-      if(ex['price']<i)
+      if(ex['price']  > i)
       i = ex["price"];
       mostExpensive = ex["name"];
     }
