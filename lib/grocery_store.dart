@@ -235,7 +235,8 @@ String getMostExpensiveFruit(List products) {
   String mostExpensive = '';
   double i = 12;
   for (var ex in products) {
-    if (ex["type"=='fruit'] < i) {
+    if (ex["type"] == 'fruit') {
+      if(ex['price']<i)
       i = ex["price"];
       mostExpensive = ex["name"];
     }
@@ -252,9 +253,10 @@ String getMostExpensiveFruit(List products) {
 
 String getCheapestFruit(List products) {
   String cheapest = '';
- double i = 0;
+  double i = 0;
   for (var ex in products) {
-    if (ex["type"=='fruit'] > i) {
+    if (ex["type"] == 'fruit') {
+      if(ex['price']>i)
       i = ex["price"];
       cheapest = ex["name"];
     }
@@ -274,7 +276,8 @@ String getMostExpensiveVegetable(List products) {
   String mostExpensive = '';
    double i = 0;
   for (var ex in products) {
-    if (ex["type"=='vegetable'] > i) {
+    if (ex["type"] == 'vegetable') {
+      if(ex['price']>i)
       i = ex["price"];
       mostExpensive = ex["name"];
     }
@@ -291,9 +294,10 @@ String getMostExpensiveVegetable(List products) {
 
 String getCheapestVegetable(List products) {
   String cheapest = '';
-  double i = 12;
+ double i = 12;
   for (var ex in products) {
-    if (ex["type"=='vegetable'] < i) {
+    if (ex["type"] == 'vegetable') {
+      if(ex['price']<i)
       i = ex["price"];
       cheapest = ex["name"];
     }
@@ -310,18 +314,13 @@ String getCheapestVegetable(List products) {
 
 String getMostExpensiveDairy(List products) {
   String mostExpensive = '';
-  List a1, a2;
-  a1 = [];
-  a2 = [];
-  for (var item in products) {
-    if (item['type'] == 'dairy') {
-      if(item['name']=='Mlik'){
-         a1.add(item['price']);
-      a2.add(item['price']);
-      }
-     
+  double i = 0;
+  for (var ex in products) {
+    if (ex["type"] == 'dairy') {
+      if(ex['price']>i)
+      i = ex["price"];
+      mostExpensive = ex["name"];
     }
-    mostExpensive = products[a2.indexOf(a1.last)]['name'];
   }
   return mostExpensive;
 }
