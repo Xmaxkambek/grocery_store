@@ -125,9 +125,9 @@ int getAmountDairy(List products) {
   int amount = 0;
   for (var item in products) {
     if (item['type'] == 'dairy') {
-      if (item['name'] == 'Milk') {
+    
         amount++;
-      }
+      
     }
   }
   return amount;
@@ -144,9 +144,9 @@ double getTotalPricesDairy(List products) {
   double total = 0.0;
   for (var item in products) {
     if (item['type'] == 'dairy') {
-      if (item['name'] == 'Milk') {
+      
         total += item['price'];
-      }
+      
     }
   }
   return total;
