@@ -162,7 +162,7 @@ double getTotalPricesDairy(List products) {
 int getAmountMeat(List products) {
   int amount = 0;
   for (var item in products) {
-    if (item['type' == 'meat']) {
+    if (item['type']=='meat') {
       amount++;
     }
   }
@@ -179,7 +179,7 @@ int getAmountMeat(List products) {
 double getTotalPricesMeat(List products) {
   double total = 0.0;
   for (var item in products) {
-    if (item['type' == 'meat']) {
+    if (item['type']=='meat') {
       total += item['price'];
     }
   }
