@@ -354,10 +354,10 @@ String getCheapestDairy(List products) {
 
 String getMostExpensiveMeat(List products) {
   String mostExpensive = '';
-  double i = 0;
+  double i = 12;
   for (var ex in products) {
     if (ex["type"] == 'meat') {
-      if(ex['price']>i)
+      if(ex['price']<i)
       i = ex["price"];
       mostExpensive = ex["name"];
     }
