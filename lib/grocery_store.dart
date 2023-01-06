@@ -285,8 +285,7 @@ String getMostExpensiveVegetable(List products) {
   return mostExpensive;
 }
 
-// Define a function that finds the cheapest vegetable from a list of products
-/// Returns the cheapest vegetable from a list of products
+ /// Returns the cheapest vegetable from a list of products
 // args:
 //  products: A list of products
 //  returns:
@@ -297,7 +296,7 @@ String getCheapestVegetable(List products) {
  double i = 12;
   for (var ex in products) {
     if (ex["type"] == 'vegetable') {
-      if(ex['price']<i)
+      if(ex['price'] < i)
       i = ex["price"];
       cheapest = ex["name"];
     }
